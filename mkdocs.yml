@@ -1,0 +1,28 @@
+site_name: Azure DevOps Java SDK
+site_url: https://example.com/
+site_description: Documentation portal for azure devops java sdk (azd)
+site_author: Harish Karthic
+
+nav:
+  - Home: index.md
+  - Docs:
+    - 'Quick Start': 'docs/quickstart.md'
+    - 'Accounts': 'docs/accounts.md'
+  - About:
+    - 'Release Notes': 'about/release-notes.md'
+    - 'License': 'about/license.md'
+    - 'Contributing': 'about/contributing.md'
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+    - admonition
+    - attr_list
+    - def_list
+
+theme: 
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - django
