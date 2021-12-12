@@ -66,8 +66,8 @@ You can get a user's id by calling **Graph** Api.
 
 !!! note
 
-    All methods throws `Connection` and `AzDException` and you should handle it in your code.
+    All methods throw `Connection` and `AzDException` and you should handle it in your code.
     `Connection` Exception is thrown if a connection object is created without any parameters or
-    null values supplied to the parameters and called any APIs.
+    null values are supplied to the parameters.
     `AzDException` throws a user friendly message with an error type to easily identify what has
     gone wrong.
