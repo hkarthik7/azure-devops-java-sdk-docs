@@ -24,3 +24,10 @@ var webApi = new AzDClientApi(organizationName, projectName, personalAccessToken
 ```
 
 This connection object returns an instance of the respective API that you call. To get started on how to use the connection object and to know all available functionalities that **azd** has to offer jump to next section.
+
+!!! note
+
+    Not all the functionalities will be available in the library, if you feel 
+    that a method is missing for any significant API please create a feature request 
+    in [github](https://github.com/hkarthik7/azure-devops-java-sdk/blob/main/.github/ISSUE_TEMPLATE.md) 
+    or feel free to create a [pull request](https://github.com/hkarthik7/azure-devops-java-sdk/blob/main/.github/PULL_REQUEST_TEMPLATE.md).

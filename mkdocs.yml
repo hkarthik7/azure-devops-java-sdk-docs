@@ -15,7 +15,6 @@ nav:
     - 'Git': 'docs/git.md'
     - 'Graph': 'docs/graph.md'
     - 'Member Entitlement Management': 'docs/member-entitlement-management.md'
-    - 'OAuth': 'docs/oauth.md'
     - 'Pipelines': 'docs/pipelines.md'
     - 'Policy': 'docs/policy.md'
     - 'Release': 'docs/release.md'
