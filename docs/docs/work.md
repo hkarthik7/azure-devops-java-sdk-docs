@@ -19,4 +19,36 @@ We have access to the functionalities that **Work** Api has.
 
 ### Available functions
 
-- 
+- **Get all team iterations**
+
+Get a list of team iterations.
+
+```java
+work.getTeamSettingsIterations("myTeam");
+```
+
+- **Get team settings iteration with time frame**
+
+Get all team settings iterations with time frame.
+
+```java
+work.getTeamSettingsIterations("myTeam", IterationsTimeFrame.CURRENT);
+```
+
+- **Get work items from team settings iterations**
+
+Get work items from team settings iterations.
+
+```java
+var id = work.getTeamSettingsIterations("myTeam").getIterations().stream().findFirst().get().getId();
+var res = work.getTeamIterationWorkItems("myTeam", id);
+res.get_links();
+```
+
+- **Delete a team iteration**
+
+Delete a team iteration using team iteration id.
+
+```java
+work.deleteTeamSettingsIteration("myTeam", "0000-00000-00000-00000-00000"); // team iteration GUID here.
+```
