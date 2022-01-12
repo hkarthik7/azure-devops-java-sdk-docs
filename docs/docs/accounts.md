@@ -19,7 +19,7 @@ We have access to the functionalities that **Accounts** Api has.
 
 ### Available functions
 
-- **Get a list of accounts that a member or a user has access to**
+#### Get a list of accounts that a member or a user has access to
 
 ```java
 accounts.getAccounts("member-id");
@@ -44,7 +44,7 @@ var memberId = mem
 accounts.getAccounts(memberId);
 ```
 
-- **Get a list of Organizations that a user has access to**
+#### Get a list of Organizations that a user has access to
 
 Note that this is not exposed in **Accounts** Api, it is a helper method to get the list of available organizations that a user has access to.
 
@@ -52,7 +52,7 @@ Note that this is not exposed in **Accounts** Api, it is a helper method to get 
 accounts.getOrganizations();
 ```
 
-- **Get a user profile**
+#### Get a user profile
 
 You can get your profile by accessing the below method and optionally you can pass the specific user id to get the respective user's profile.
 

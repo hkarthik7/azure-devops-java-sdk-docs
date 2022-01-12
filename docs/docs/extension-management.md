@@ -19,7 +19,7 @@ We have access to the functionalities that **Extension Management** Api has.
 
 ### Available functions
 
-- **Get an extension**
+#### Get an extension
 
 Get an extension with extension name and publisher id.
 
@@ -27,7 +27,7 @@ Get an extension with extension name and publisher id.
 extensions.getExtension("sonarqube", "sonarsource");
 ```
 
-- **Get a list of installed extensions**
+#### Get a list of installed extensions
 
 Get a list of installed extensions.
 
@@ -35,7 +35,7 @@ Get a list of installed extensions.
 extensions.getExtensions();
 ```
 
-- **Install an extension**
+#### Install an extension
 
 Install an extension with extension name, publisher id and version. If version is null, latest version will be selected.
 
@@ -43,7 +43,7 @@ Install an extension with extension name, publisher id and version. If version i
 extensions.installExtension("sonarsource", "sonarqube", null);
 ```
 
-- **Uninstall an extension**
+#### Uninstall an extension
 
 Uninstall an extension with extension name and publisher id.
 
@@ -51,7 +51,7 @@ Uninstall an extension with extension name and publisher id.
 extensions.uninstallExtension("sonarsource", "sonarqube");
 ```
 
-- **Update an extension**
+#### Update an extension
 
 You can enable and disable an extension with this API. If NONE is specified extension will be enabled.
 

@@ -19,7 +19,7 @@ We have access to the functionalities that **Pipelines** Api has.
 
 ### Available functions
 
-- **Get pipeline artifacts**
+#### Get pipeline artifacts
 
 Get the pipeline artifacts.
 
@@ -50,7 +50,7 @@ try {
 }
 ```
 
-- **Get Pipeline logs**
+#### Get Pipeline logs
 
 Get the logs from pipeline.
 
@@ -59,7 +59,7 @@ Get the logs from pipeline.
 pipelines.getPipelineLogs(24, 513);
 ```
 
-- **Create a pipeline**
+#### Create a pipeline
 
 Create a pipeline from the existing *YAML* file in the repository. You should've already created and hosted the *YAML* configuration file in the repository to use
 this functionality.
@@ -69,7 +69,7 @@ String repo = g.getRepository("myRepo");
 pipelines.createPipeline("Deploy-WebApp-CI", "/", "/azure-pipelines.yaml", repo.getId(), repo.getName());
 ```
 
-- **Get a pipeline using pipeline id**
+#### Get a pipeline using pipeline id
 
 Get a pipeline object using pipeline id. The pipeline id is the build definition id.
 
@@ -77,7 +77,7 @@ Get a pipeline object using pipeline id. The pipeline id is the build definition
 pipelines.getPipeline(22);
 ```
 
-- **Get a list of all pipelines**
+#### Get a list of all pipelines
 
 Get a list of all available build pipelines.
 
@@ -85,7 +85,7 @@ Get a list of all available build pipelines.
 pipelines.getPipelines();
 ```
 
-- **Test a pipeline**
+#### Test a pipeline
 
 Run a preview of the pipeline and get the *YAML* of pipeline as a result.
 
@@ -93,7 +93,7 @@ Run a preview of the pipeline and get the *YAML* of pipeline as a result.
 pipelines.previewPipeline(24, true);
 ```
 
-- **Get a pipeline run**
+#### Get a pipeline run
 
 Get the pipeline run or a build using pipeline id and run id.
 
@@ -101,7 +101,7 @@ Get the pipeline run or a build using pipeline id and run id.
 pipelines.getPipelineRun(22, 234);
 ```
 
-- **Get pipeline runs**
+#### Get pipeline runs
 
 Get all the build of a pipeline.
 
@@ -109,7 +109,7 @@ Get all the build of a pipeline.
 pipelines.getPipelineRuns(22);
 ```
 
-- **Run a pipeline**
+#### Run a pipeline
 
 Run a pipeline using it's id.
 

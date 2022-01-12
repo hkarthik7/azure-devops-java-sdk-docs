@@ -19,7 +19,7 @@ We have access to the functionalities that **Release** Api has.
 
 ### Available functions
 
-- **Create a release**
+#### Create a release
 
 Create a release using release pipeline/definition id, artifact alias name, artifact id, artifact name and optionally set it to draft. You can get the artifact alias name from `getReleaseDefinition` method and by passing the release definition id. Artifact id is build id and artifact name is the name of build pipeline. In this case it is `Demo-CI`.
 
@@ -34,7 +34,7 @@ release.createRelease(2, "description", "_Demo-CI", 176, "Demo-CI", false);
     Using the `createRelease` method won't actually deploy anything to the available stages. It creates a release and will be ready to kick
     off the deployment.
 
-- **Get a release**
+#### Get a release
 
 Get a release using release id.
 
@@ -42,7 +42,7 @@ Get a release using release id.
 release.getRelease(33);
 ```
 
-- **Get release environment**
+#### Get release environment
 
 Get environments associated to a release. You need environment id to get the associated environment(s). You can get it from the release object.
 
@@ -50,7 +50,7 @@ Get environments associated to a release. You need environment id to get the ass
 release.getReleaseEnvironment(33, 4);
 ```
 
-- **Get all releases**
+#### Get all releases
 
 Get a list of all releases.
 
@@ -58,7 +58,7 @@ Get a list of all releases.
 release.getReleases();
 ```
 
-- **Create a release definition**
+#### Create a release definition
 
 To create a release definition you need the json string from existing release definition. This is the easiest way to create a release definition. Download the json using `Export` option from the `Releases` section of any pipeline and modify it. Then you can use it as a reference to create a definition.
 Alternatively you get the `Release` object from the existing pipeline and convert it to string and then create a pipeline based on that. 
@@ -67,7 +67,7 @@ Alternatively you get the `Release` object from the existing pipeline and conver
 release.createReleaseDefinition(releaseDefinitionParameters);
 ```
 
-- **Delete a release definition**
+#### Delete a release definition
 
 Delete a release definition using definition id.
 
@@ -75,7 +75,7 @@ Delete a release definition using definition id.
 release.deleteReleaseDefinition(3);
 ```
 
-- **Get a list of release definitions**
+#### Get a list of release definitions
 
 Get a list of release definitions.
 

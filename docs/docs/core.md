@@ -19,7 +19,7 @@ We have access to the functionalities that **Core** Api has.
 
 ### Available functions
 
-- **Get a list of process**
+#### Get a list of process
 
 Get a list of available process that you can use to create a project. For instance Agile, Basic, Scrum etc.
 
@@ -27,7 +27,7 @@ Get a list of available process that you can use to create a project. For instan
 core.getProcesses();
 ```
 
-- **Create a new project**
+#### Create a new project
 
 Create a new `Scrum` project with project name and description.
 
@@ -53,7 +53,7 @@ String sourceControlType = "Git";
 core.createProject(projectName, description, sourceControlType, templateId);
 ```
 
-- **Delete a project with project id**
+#### Delete a project with project id
 
 Delete a project with project id. You can get project id by running `getProject` and passing the project name.
 
@@ -61,7 +61,7 @@ Delete a project with project id. You can get project id by running `getProject`
 core.deleteProject("project-guid-here");
 ```
 
-- **Get a project**
+#### Get a project
 
 Get a project by project name.
 
@@ -69,7 +69,7 @@ Get a project by project name.
 core.getProject("my-awesome-project");
 ```
 
-- **Get a project's properties**
+#### Get a project's properties
 
 Get a project's properties with project id.
 
@@ -78,7 +78,7 @@ String projectId = core.getProject("my-project").getId();
 core.getProjectProperties(projectId);
 ```
 
-- **Get all projects**
+#### Get all projects
 
 List all available projects.
 
@@ -86,7 +86,7 @@ List all available projects.
 core.getProjects();
 ```
 
-- **Update a project**
+#### Update a project
 
 Update a project's properties.
 
@@ -98,7 +98,7 @@ var projectProperties = new HashMap<String, Object>() {{
 core.updateProject("my-project", projectProperties);
 ```
 
-- **Create a team within the project**
+#### Create a team within the project
 
 Create a team within the project.
 
@@ -106,7 +106,7 @@ Create a team within the project.
 core.createTeam("my-project", "my-new-team");
 ```
 
-- **Delete a team**
+#### Delete a team
 
 Delete a team within the project.
 
@@ -114,7 +114,7 @@ Delete a team within the project.
 core.deleteTeam("my-project", "my-new-team");
 ```
 
-- **Get all teams**
+#### Get all teams
 
 Get a list of teams.
 
@@ -122,7 +122,7 @@ Get a list of teams.
 core.getTeams();
 ```
 
-- **Update an existing team within the project**
+#### Update an existing team within the project
 
 Update an existing team within the project with project name. Using this method you can only update a team's name and description.
 

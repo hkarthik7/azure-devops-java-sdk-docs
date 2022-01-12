@@ -19,7 +19,7 @@ We have access to the functionalities that **Service Endpoint** Api has.
 
 ### Available functions
 
-- **Create Azure RM service endpoint**
+#### Create Azure RM service endpoint
 
 Create Azure resource manager service endpoint.
 
@@ -27,7 +27,7 @@ Create Azure resource manager service endpoint.
 endpoint.createAzureRMServiceEndpoint("endpointName", "servicePrincipalId", "servicePrincipalKey", "tenantId", "subscriptionId", "subscriptionName");
 ```
 
-- **Create a service endpoint**
+#### Create a service endpoint
 
 Create a service endpoint. You should construct the request body based on the service endpoint you need to add. In this example we will create a generic service
 endpoint for an example application.
@@ -68,7 +68,7 @@ var requestBody = new LinkedHashMap<>(){{
 endpoint.createServiceEndpoint("MyNewServiceEndpoint", "Generic", requestBody)
 ```
 
-- **Get a service endpoint**
+#### Get a service endpoint
 
 Get a service endpoint with endpoint id.
 
@@ -76,7 +76,7 @@ Get a service endpoint with endpoint id.
 endpoint.getServiceEndpoint("endpointId");
 ```
 
-- **Get all service endpoints**
+#### Get all service endpoints
 
 Get all service endpoints.
 
@@ -87,7 +87,7 @@ for (var ePoint: sEndpoints.getServiceEndpoints()) {
 }
 ```
 
-- **Delete a service endpoint**
+#### Delete a service endpoint
 
 Delete a service endpoint using endpoint id.
 
@@ -95,7 +95,7 @@ Delete a service endpoint using endpoint id.
 endpoint.deleteServiceEndpoint("endpointId", new String[]{"projectName"});
 ```
 
-- **Share a service endpoint**
+#### Share a service endpoint
 
 Share a service endpoint connection with other project.
 

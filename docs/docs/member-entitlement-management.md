@@ -19,7 +19,7 @@ We have access to the functionalities that **Member Entitlement Management** Api
 
 ### Available functions
 
-- **Get all group entitlements**
+#### Get all group entitlements
 
 Get a list of group entitlements.
 
@@ -27,7 +27,7 @@ Get a list of group entitlements.
 mem.getGroupEntitlements();
 ```
 
-- **Get members from a group**
+#### Get members from a group
 
 Get members from a group using group id.
 
@@ -35,7 +35,7 @@ Get members from a group using group id.
 mem.getMembers("group-id");
 ```
 
-- **Remove user from a group**
+#### Remove user from a group
 
 Remove a member from the group using group id and member id.
 
@@ -43,7 +43,7 @@ Remove a member from the group using group id and member id.
 mem.removeMemberFromGroup("group-id", "member-id");
 ```
 
-- **Add an user entitlement**
+#### Add an user entitlement
 
 Add a user and assign a license.
 
@@ -59,7 +59,7 @@ Delete a user entitlement.
 mem.deleteUserEntitlement("user-id");
 ```
 
-- **Get user entitlements**
+#### Get user entitlements
 
 Get a list of user entitlements.
 
@@ -67,7 +67,7 @@ Get a list of user entitlements.
 mem.getUserEntitlements();
 ```
 
-- **Update an user entitlement**
+#### Update an user entitlement
 
 Update an user's account type or licensing source.
 

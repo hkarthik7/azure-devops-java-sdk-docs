@@ -19,7 +19,7 @@ We have access to the functionalities that **Policy** Api has.
 
 ### Available functions
 
-- **Create a policy configuration**
+#### Create a policy configuration
 
 Create a policy configuration. In this example we will see how to add minimum or 2 reviewers to the pull request.
 
@@ -44,7 +44,7 @@ var settings = new HashMap<String, Object>(){{
 policy.createPolicyConfiguration("fa74gfbfd-cfnb-45rc-9dfa-490fhf74tfg1dd", true, false, settings);
 ```
 
-- **Delete a policy configuration**
+#### Delete a policy configuration
 
 Delete a policy configuration using configuration id.
 
@@ -52,7 +52,7 @@ Delete a policy configuration using configuration id.
 policy.deletePolicyConfiguration(2);
 ```
 
-- **Get a list of policy configurations**
+#### Get a list of policy configurations
 
 Get a list of all available policy configurations.
 
@@ -60,7 +60,7 @@ Get a list of all available policy configurations.
 policy.getPolicyConfigurations();
 ```
 
-- **Get a policy configuration**
+#### Get a policy configuration
 
 Get a policy configuration using id.
 
@@ -68,9 +68,9 @@ Get a policy configuration using id.
 policy.getPolicyConfiguration(1);
 ```
 
-- **Update a policy configuration**
+#### Update a policy configuration
 
-Update an existing policy configuration. You need the configuration to update the specific configuration.
+Update an existing policy configuration. You need t he configuration id to update the specific configuration.
 
 One such example [here](https://docs.microsoft.com/en-us/rest/api/azure/devops/policy/configurations/update?view=azure-devops-rest-6.1#examples).
 
@@ -84,7 +84,7 @@ policy.updatePolicyConfiguration(
 );
 ```
 
-- **Get a list of policy types**
+#### Get a list of policy types
 
 Get a list of all policy types.
 

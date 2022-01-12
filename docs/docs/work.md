@@ -19,7 +19,7 @@ We have access to the functionalities that **Work** Api has.
 
 ### Available functions
 
-- **Get all team iterations**
+#### Get all team iterations
 
 Get a list of team iterations.
 
@@ -27,7 +27,7 @@ Get a list of team iterations.
 work.getTeamSettingsIterations("myTeam");
 ```
 
-- **Get team settings iteration with time frame**
+#### Get team settings iteration with time frame
 
 Get all team settings iterations with time frame.
 
@@ -35,7 +35,7 @@ Get all team settings iterations with time frame.
 work.getTeamSettingsIterations("myTeam", IterationsTimeFrame.CURRENT);
 ```
 
-- **Get work items from team settings iterations**
+#### Get work items from team settings iterations
 
 Get work items from team settings iterations.
 
@@ -45,7 +45,7 @@ var res = work.getTeamIterationWorkItems("myTeam", id);
 res.get_links();
 ```
 
-- **Delete a team iteration**
+#### Delete a team iteration
 
 Delete a team iteration using team iteration id.
 

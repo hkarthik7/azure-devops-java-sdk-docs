@@ -2,6 +2,11 @@
 
 One way of getting to know what's new in **azd** is to review the release notes. It is easy to update the version of the library that you're using by just changing the version in your *pom.xml* or any other project relevant files.
 
+## Version 2.5.9
+
+- Expanded the WorkItemTrackingDetails interface with two updateWorkItem methods and added hyperlinks support. [Associated PR](https://github.com/hkarthik7/azure-devops-java-sdk/pull/10)
+- Added support for **Distributed Task Api**
+
 ## Version 2.5.8
 
 - Merged PR: [Added support for **policy Api** #8](https://github.com/hkarthik7/azure-devops-java-sdk/pull/8)

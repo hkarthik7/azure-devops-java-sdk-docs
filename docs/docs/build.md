@@ -19,7 +19,7 @@ We have access to the functionalities that **Build** Api has.
 
 ### Available functions
 
-- **Get a list of builds**
+#### Get a list of builds
 
 ```java
 build.getBuilds(); // Gives you Build object.
@@ -28,7 +28,7 @@ build.getBuilds().getBuildResults(); // Gives you list of builds to loop through
 
 This returns a list of build object which you can iterate through and get the build Id, build definition or pipeline name etc.
 
-- **Create a build definition (aka build pipeline)**
+#### Create a build definition (aka build pipeline)
 
 `createBuildDefinition` method accepts the build definition parameters as a string. So, you have to create a json string with all the parameters your need and call this method. There are two ways you can achieve this
 
@@ -58,7 +58,7 @@ build.createBuildDefinition(definitionString);
     There is a helper method available to clone the existing pipeline and create a copy of it.
     You can use `cloneBuildDefinition` if you want to clone the existing pipeline and later edit it in the UI.
 
-- **Queue a build**
+#### Queue a build
 
 Kick off a build by passing the build id.
 
@@ -66,7 +66,7 @@ Kick off a build by passing the build id.
 build.queueBuild(9);
 ```
 
-- **Delete a build**
+#### Delete a build
 
 Deletes a build with build Id.
 
@@ -74,7 +74,7 @@ Deletes a build with build Id.
 build.deleteBuild(77);
 ```
 
-- **Get the changes associated with a build**
+#### Get the changes associated with a build
 
 Get the changes associated with a build by passing the build Id.
 
@@ -82,7 +82,7 @@ Get the changes associated with a build by passing the build Id.
 build.getBuildChanges(78);
 ```
 
-- **Get logs of a build**
+#### Get logs of a build
 
 Get the logs of a build with build id and log id.
 
@@ -93,7 +93,7 @@ build.getBuildLog(87, 4);
 build.getBuildLogs(87)
 ```
 
-- **Get all build work items associated to a build**
+#### Get all build work items associated to a build
 
 Get all build work items.
 
@@ -101,7 +101,7 @@ Get all build work items.
 build.getBuildWorkItems(87);
 ```
 
-- **List all the changes between two builds**
+#### List all the changes between two builds
 
 Get all the changes between two builds and top number of changes to return.
 
@@ -109,7 +109,7 @@ Get all the changes between two builds and top number of changes to return.
 build.getChangesBetweenBuilds(77, 87, 5);
 ```
 
-- **Clone a build definition**
+#### Clone a build definition
 
 This is a helper method to easily and quick clone a build pipeline.
 
@@ -120,7 +120,7 @@ String pipelineToCloneName = "Deploy-WebApp-CI-Copy";
 build.cloneBuildDefinition(pipelineName, pipelineToCloneName);
 ```
 
-- **Delete a build definition**
+#### Delete a build definition
 
 Delete a build definition/pipeline by definition id.
 
@@ -148,7 +148,7 @@ int definitionId = build.getBuildDefinitions()
 build.deleteBuildDefinition(definitionId)
 ```
 
-- **Restore build definition**
+#### Restore build definition
 
 Restore a deleted build definition/pipeline
 
@@ -157,7 +157,7 @@ Restore a deleted build definition/pipeline
 build.restoreBuildDefinition(24, false)
 ```
 
-- **Add build tag**
+#### Add build tag
 
 Add tag to a build by passing build Id and tag name. This helps you to filter out the builds based on tags.
 
@@ -165,7 +165,7 @@ Add tag to a build by passing build Id and tag name. This helps you to filter ou
 build.addBuildTag(77, "Demo")
 ```
 
-- **Add multiple tags to a build**
+#### Add multiple tags to a build
 
 Add multiple tags to a build. This API accepts a `String array` of tags.
 
@@ -173,7 +173,7 @@ Add multiple tags to a build. This API accepts a `String array` of tags.
 build.addBuildTags(77, new String[]{ "Demo", "Test" })
 ```
 
-- **Add definition tag**
+#### Add definition tag
 
 Add a tag to a build definition/pipeline.
 
@@ -181,7 +181,7 @@ Add a tag to a build definition/pipeline.
 build.addDefinitionTag(22, "WebAppCI");
 ```
 
-- **Add multiple tags to build definition**
+#### Add multiple tags to build definition
 
 Add multiple tags to build definition.
 
@@ -189,7 +189,7 @@ Add multiple tags to build definition.
 build.addDefinitionTags(22, new String [] { "WebAppCI", "Stage-Build" });
 ```
 
-- **Delete a build tag**
+#### Delete a build tag
 
 Delete a build tag with tag name and build id.
 
@@ -197,7 +197,7 @@ Delete a build tag with tag name and build id.
 build.deleteBuildTag(77, "Demo");
 ```
 
-- **Delete definition tag**
+#### Delete definition tag
 
 Delete a tag attached to a build definition.
 
@@ -205,7 +205,7 @@ Delete a tag attached to a build definition.
 build.deleteDefinitionTag(22, "WebAppCI");
 ```
 
-- **Delete a tag**
+#### Delete a tag
 
 Delete a tag from tag store.
 
@@ -218,7 +218,7 @@ build.deleteTag("buildTag");
     You can't delete the tag(s) with special characters using `delete` methods. To delete the tags with special
     characters use `updateBuildTags` and `updateDefinitionTags` methods.
 
-- **Update a build tag**
+#### Update a build tag
 
 Update a build tag and optionally specify if the tag has to be removed or not.
 

@@ -19,7 +19,7 @@ We have access to the functionalities that **Git** Api has.
 
 ### Available functions
 
-- **Create a new repository**
+#### Create a new repository
 
 Create a new repository with repo name and project id.
 
@@ -29,7 +29,7 @@ var projectId = core.getProject("myProject").getId();
 git.createRepository("WebApp-Deployment-Code", projectId);
 ```
 
-- **Delete a repository**
+#### Delete a repository
 
 Delete a repository with repository id. You can get the repository id by running `getRepository` method.
 
@@ -38,7 +38,7 @@ var repoId = git.getRepository("WebApp-Deployment-Code").getId();
 git.deleteRepository(repoId);
 ```
 
-- **Permanently delete a repository**
+#### Permanently delete a repository
 
 Delete a repository from recycle bin.
 
@@ -47,7 +47,7 @@ var repoId = git.getRepository("WebApp-Deployment-Code").getId();
 git.deleteRepositoryFromRecycleBin(repoId);
 ```
 
-- **List deleted repositories**
+#### List deleted repositories
 
 Get a list of deleted repositories.
 
@@ -55,7 +55,7 @@ Get a list of deleted repositories.
 git.getDeletedRepositories();
 ```
 
-- **Get a list of recycle bin repositories**
+#### Get a list of recycle bin repositories
 
 Get a list of repositories from recycle bin.
 
@@ -63,7 +63,7 @@ Get a list of repositories from recycle bin.
 git.getRecycleBinRepositories();
 ```
 
-- **Get a repository**
+#### Get a repository
 
 Get a repository by name.
 
@@ -71,7 +71,7 @@ Get a repository by name.
 git.getRepository("My-repository");
 ```
 
-- **Get a list of repositories**
+#### Get a list of repositories
 
 Get a list of all the repositories.
 
@@ -79,7 +79,7 @@ Get a list of all the repositories.
 git.getRepositories();
 ```
 
-- **Restore a repository**
+#### Restore a repository
 
 Restore a deleted repository from recycle bin.
 
@@ -88,7 +88,7 @@ Restore a deleted repository from recycle bin.
 git.restoreRepositoryFromRecycleBin(repoId, false);
 ```
 
-- **Update a repository**
+#### Update a repository
 
 Update a repository's default branch or rename a repository.
 
@@ -100,7 +100,7 @@ git.updateRepository(repoId, "my-repo", "develop");
 git.updateRepository(repoId, "my-new-repo", "develop");
 ```
 
-- **Create a pull request**
+#### Create a pull request
 
 Create a pull request and optionally set it to draft.
 
@@ -133,7 +133,7 @@ git.createPullRequest(
 );
 ```
 
-- **Get a pull request**
+#### Get a pull request
 
 Get a pull request from a repository.
 
@@ -141,7 +141,7 @@ Get a pull request from a repository.
 git.getPullRequest("repository-name", "pull-request-id");
 ```
 
-- **Get all pull requests from a project**
+#### Get all pull requests from a project
 
 Get all pull requests from a project.
 
@@ -149,7 +149,7 @@ Get all pull requests from a project.
 git.getPullRequestsByProject();
 ```
 
-- **Update a branch lock**
+#### Update a branch lock
 
 Lock and unlock a branch with this API.
 
@@ -161,7 +161,7 @@ git.updateBranchLock("my-repo", "develop", true);
 git.updateBranchLock("my-repo", "develop", false);
 ```
 
-- **Get work items associated with a pull request**
+#### Get work items associated with a pull request
 
 Get work items associated with a pull request.
 
@@ -169,7 +169,7 @@ Get work items associated with a pull request.
 git.getPullRequestWorkItems(22, "my-repo");
 ```
 
-- **Create a pull request label**
+#### Create a pull request label
 
 Add a tag to a pull request.
 
@@ -177,7 +177,7 @@ Add a tag to a pull request.
 git.createPullRequestLabel("my-repo", 22, "new-feature");
 ```
 
-- **Delete a pull request label**
+#### Delete a pull request label
 
 Remove a tag from a pull request.
 
@@ -185,7 +185,7 @@ Remove a tag from a pull request.
 git.deletePullRequestLabel("my-repo", 22, "new-feature");
 ```
 
-- **Create pull request reviewer**
+#### Create pull request reviewer
 
 Add a reviewer to a pull request and optionally make them as required.
 

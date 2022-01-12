@@ -19,7 +19,7 @@ We have access to the functionalities that **Feed Management** Api has.
 
 ### Available functions
 
-- **Create a feed**
+#### Create a feed
 
 Create a feed in the artifacts section.
 
@@ -28,7 +28,7 @@ Create a feed in the artifacts section.
 feed.createFeed("myFeed", "Description for myFeed", true, true);
 ```
 
-- **Create a feed view within the feed**
+#### Create a feed view within the feed
 
 Create a feed view within the feed.
 
@@ -36,7 +36,7 @@ Create a feed view within the feed.
 feed.createFeedView("myFeed", "myFeedView", FeedViewType.IMPLICIT, FeedVisibility.ORGANIZATION);
 ```
 
-- **Delete a feed with feed id**
+#### Delete a feed with feed id
 
 Delete a feed with feed id. You can get the feed id by calling `getFeed` method and passing the feed name.
 
@@ -45,7 +45,7 @@ String feedId = feed.getFeed("myFeed");
 feed.deleteFeed(feedId.getId());
 ```
 
-- **Get and set feed permissions**
+#### Get and set feed permissions
 
 Get feed permissions and modify the permissions. To modify the feed permissions you need identity descriptor which can be acquired from
 `getFeedPermissions` method.
@@ -62,7 +62,7 @@ String identityDescriptor = feed.getFeedPermissions("myFeed")
 feed.setFeedPermissions("feedName", "displayName", identityDescriptor, false, "reader");
 ```
 
-- **Change the attributes of a feed**
+#### Change the attributes of a feed
 
 Update a feed and change it's attributes such as badges enabled, description,  hide deleted packages, upstream enabled.
 
@@ -70,7 +70,7 @@ Update a feed and change it's attributes such as badges enabled, description,  h
 feed.updateFeed("myFeed", false, "This is new description", true, true);
 ```
 
-- **Update a feed view**
+#### Update a feed view
 
 Update a feed view, you can change it's type and visibility.
 

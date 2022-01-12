@@ -19,7 +19,7 @@ We have access to the functionalities that **Service Hooks** Api has.
 
 ### Available functions
 
-- **Create a new subscription**
+#### Create a new subscription
 
 Create a new subscription. You can view the [documentation](https://docs.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/create?view=azure-devops-rest-6.1#examples) to know the supported services and parameters that it requires to create a new subscription.
 
@@ -41,7 +41,7 @@ var consumerInputs = new LinkedHashMap<String, Object>(){{
 var res = hooks.createSubscription("tfs", "build.complete", "1.0-preview.1", "webHooks", "httpRequest", publisherInputs, consumerInputs);
 ```
 
-- **Get a subscription**
+#### Get a subscription
 
 Get a subscription using subscription id.
 
@@ -50,7 +50,7 @@ var subscriptions = hooks.getSubscriptions();
 hooks.getSubscription(subscriptions.getSubscriptions().stream().findFirst().get().getId());
 ```
 
-- **Get a list of subscription**
+#### Get a list of subscription
 
 Get all available subscriptions.
 
@@ -58,7 +58,7 @@ Get all available subscriptions.
 hooks.getSubscriptions();
 ```
 
-- **Delete a subscription**
+#### Delete a subscription
 
 Delete a subscription using subscription id.
 

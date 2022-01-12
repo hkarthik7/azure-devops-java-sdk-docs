@@ -19,7 +19,7 @@ We have access to the functionalities that **Graph** Api has.
 
 ### Available functions
 
-- **Create a new user**
+#### Create a new user
 
 Create a new user. You need to provide user descriptor to successfully create a user account. This simply means that you've to clone (or materialize) an existing user using the `user descriptor`.
 
@@ -38,7 +38,7 @@ graph.getUsers()
     .getDescriptor();
 ```
 
-- **Add user to group**
+#### Add user to group
 
 After successfully creating a user you can add the user account to an existing group.
 
@@ -55,7 +55,7 @@ graph.getGroups()
     .getDescriptor();
 ```
 
-- **Delete a user**
+#### Delete a user
 
 Delete a user using user descriptor.
 
@@ -63,7 +63,7 @@ Delete a user using user descriptor.
 graph.deleteUser("user-descriptor");
 ```
 
-- **Get a user**
+#### Get a user
 
 Get a user with user descriptor.
 
