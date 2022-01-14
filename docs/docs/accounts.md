@@ -19,7 +19,7 @@ We have access to the functionalities that **Accounts** Api has.
 
 ### Available functions
 
-#### Get a list of accounts that a member or a user has access to
+#### Get a list of accounts that a member or an user has access to
 
 ```java
 accounts.getAccounts("member-id");
@@ -44,15 +44,15 @@ var memberId = mem
 accounts.getAccounts(memberId);
 ```
 
-#### Get a list of Organizations that a user has access to
+#### Get a list of Organizations that an user has access to
 
-Note that this is not exposed in **Accounts** Api, it is a helper method to get the list of available organizations that a user has access to.
+Note that this is not exposed in **Accounts** Api, it is a helper method to get the list of available organizations that an user has access to.
 
 ```java
 accounts.getOrganizations();
 ```
 
-#### Get a user profile
+#### Get an user profile
 
 You can get your profile by accessing the below method and optionally you can pass the specific user id to get the respective user's profile.
 
@@ -62,12 +62,12 @@ accounts.getProfile();
 accounts.getProfile("user-id");
 ```
 
-You can get a user's id by calling **Graph** Api.
+You can get an user's id by calling **Graph** Api.
 
 !!! note
 
     All methods throw `Connection` and `AzDException` and you should handle it in your code.
     `Connection` Exception is thrown if a connection object is created without any parameters or
     null values are supplied to the parameters.
-    `AzDException` throws a user friendly message with an error type to easily identify what has
+    `AzDException` throws an user friendly message with an error type to easily identify what has
     gone wrong.
