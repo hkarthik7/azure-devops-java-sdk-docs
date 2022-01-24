@@ -21,7 +21,7 @@ We have access to the functionalities that **Service Hooks** Api has.
 
 #### Create a new subscription
 
-Create a new subscription. You can view the [documentation](https://docs.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/create?view=azure-devops-rest-6.1#examples) to know the supported services and parameters that it requires to create a new subscription.
+Create a new subscription. You can view the [documentation](https://docs.microsoft.com/en-us/rest/api/azure/devops/hooks/subscriptions/create?view=azure-devops-rest-6.1#examples) to know the supported services and parameters that are required to create a new subscription.
 
 ```java
 var core = webApi.getCoreApi();
