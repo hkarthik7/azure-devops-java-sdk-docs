@@ -2,6 +2,35 @@
 
 One way of getting to know what's new in **azd** is to review the release notes. It is easy to update the version of the library that you're using by just changing the version in your *pom.xml* or any other project relevant files.
 
+## 3.0.2
+
+**Minor incremental release**
+
+- Merged PR: [Issue #13: Change size from int to long #14](https://github.com/hkarthik7/azure-devops-java-sdk/pull/14)
+- Extended support for **Git Api**.
+
+## 3.0.1
+
+- Bug fix for executor service in **AzDAsyncApi**.
+
+## 3.0.0
+
+**Breaking changes**
+
+- Removed **ConnectionException** class as it is not used anymore.  
+- Extended functionality of **Release Api**.
+  - Delete and Update a release
+  - Manage release environments
+  - Kick off a release pipeline using `queueRelease` method
+  - Approve a release
+  - Update the manual intervention for a release
+- Extended functionality of **Build Api**.
+  - Get the `yaml` for a designer build pipeline
+  - Update a stage or all stages in the build pipeline
+- Change in input parameters for **createSubscription** in **ServiceHooksApi**.
+  - **createSubscription** method is tied to type **ServiceHooks** that extracts the parameters from it.
+- Added **AzDAsyncApi** that helps to create asynchronous operation across all the methods in the library.
+
 ## Version 2.5.9
 
 - Expanded the WorkItemTrackingDetails interface with two updateWorkItem methods and added hyperlinks support. [Associated PR](https://github.com/hkarthik7/azure-devops-java-sdk/pull/10)
