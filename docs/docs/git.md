@@ -194,6 +194,22 @@ Add a reviewer to a pull request and optionally make them as required.
 git.createPullRequestReviewer(32, "my-repo", "reviewer-id", 0, true);
 ```
 
+#### Create an annotated tag
+
+Add an annotated tag to the repository for a particular commit.
+
+```java
+git.createAnnotatedTag("my-repository", "tag-name", "SHA-1-commit-id", "Test tag");
+```
+
+#### Get Commits from a repository
+
+Get all commits from a repository.
+
+```java
+git.getCommits("my-repository");
+```
+
 !!! note
 
     There are many functionalities that Git API offers, explore it and feel free to add a new
