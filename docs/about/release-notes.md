@@ -2,6 +2,13 @@
 
 One way of getting to know what's new in **azd** is to review the release notes. It is easy to update the version of the library that you're using by just changing the version in your *pom.xml* or any other project relevant files.
 
+## 3.0.3
+
+- Addressed issue: [browsing repository content #15](https://github.com/hkarthik7/azure-devops-java-sdk/issues/15)
+- Merged PR - [Added support for Source Providers in BuildApi #16](https://github.com/hkarthik7/azure-devops-java-sdk/pull/16)
+- Added support for **Source Providers** in **BuildApi**.
+- Updated dependency jackson-databind version.
+
 ## 3.0.2
 
 **Minor incremental release**
