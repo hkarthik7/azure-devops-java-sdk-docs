@@ -237,6 +237,68 @@ boolean toRemove = true;
 build.updateBuildTags(buildId, tags, toRemove);
 ```
 
+#### Get file contents
+
+Get a source provider's file contents from the repository. Given that you should provide the source provide name which can be fetched from method
+`build.getSourceProviders()`.
+
+```java
+// If the complete repository name is not provided you will get an error.
+build.getFileContents("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName", "master", "LICENSE");
+```
+
+!!! tip
+
+    You can get the service endpoint Id from **ServiceEndpointApi** and method `getServiceEndpoints()`.
+
+#### Get path contents
+
+Get the contents of source provider repository from a particular path.
+
+```java
+build.getPathContents("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName", "master", "/");
+build.getPathContents("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName", "master", "/Classes");
+build.getPathContents("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName", "master", "/Models/Data");
+```
+
+#### Get a pull request
+
+Get a pull request from a source provider repository.
+
+```java
+build.getPullRequest("Github", "2", "userName/repositoryName", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6");
+```
+
+#### Get a list of source providers
+
+```java
+build.getSourceProviders();
+```
+
+#### Get all branches
+
+Get all available branches or a particular branch from a source provider repository.
+
+```java
+build.getBranches("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName");
+```
+
+#### Get source providers repositories
+
+Get all available repositories or a particular repository from a source provider.
+
+```java
+build.getRepositories("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6");
+```
+
+#### Get web hooks
+
+Get a list of web hooks associated to a source provider repository.
+
+```java
+build.getWebHooks("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName");
+```
+
 !!! note
 
     There are many other functionalities that BuidApi offers, if you find any missing feature
