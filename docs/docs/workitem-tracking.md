@@ -180,3 +180,34 @@ Get a work item type by name.
 ```java
 wit.getWorkItemType("bug");
 ```
+
+#### Add an attachment to a work item
+
+To add an attachment to a work item you should create an attachment first. This requires you to pass file name, attachment upload type, project team name, attachment contents and work item id.
+
+```java
+// Create an attachment
+var attachment = wit.createAttachment("testFile.txt", AttachmentUploadType.SIMPLE, "my-team", "Sample content");
+var attachmentFields = new HashMap<String, String>(){{ put(attachment.getUrl(), "Test File url."); }};
+
+// add the attachment to work item.
+wit.addWorkItemAttachment(133, attachmentFields);
+```
+
+#### Remove an attachment from a work item
+
+To remove an attachment you should provide the attachment url, which you can get from the **Relations** section of [WorkItem](https://hkarthik7.github.io/azd-docs/org/azd/workitemtracking/types/WorkItem.html) object.
+
+```java
+// Remove an attachment from the work item.
+var relations = wit.getWorkItem(133, WorkItemExpand.RELATIONS).getRelations();
+String fileNameToRemove = "testFile.txt";
+List<String> attachmentUrl = new ArrayList<>();
+
+for (var relation: relations) {
+    if (relation.getAttributes().getName().equals(fileNameToRemove)) {
+        attachmentUrl.add(relation.getUrl());
+        wit.removeWorkItemAttachment(133, attachmentUrl);
+    }
+}
+```

@@ -60,6 +60,12 @@ graph.getGroups()
 Delete a user using user descriptor.
 
 ```java
+var userDescriptor = graph.getUsers().getUsers()
+    .stream()
+    .filter(x -> x.getDisplayName().equals("test@xmail.com"))
+    .findFirst()
+    .get()
+    .getDescriptor();
 graph.deleteUser("user-descriptor");
 ```
 
@@ -69,4 +75,49 @@ Get a user with user descriptor.
 
 ```java
 graph.getUser("user-descriptor");
+```
+
+#### Get a all groups
+
+List all the groups.
+
+```java
+graph.groups().getGraphGroups();
+```
+
+#### Get a list of users in a group
+
+Get a list of users in a group. You should pass the groups descriptor to get the users.
+
+```java
+var groupDescriptor = graph.getGroups()
+    .getGraphGroups()
+    .stream()
+    .filter(x -> x.getDisplayName().equals("Readers"))
+    .findFirst()
+    .get()
+    .getDescriptor();
+graph.getGroupMembersOf(groupDescriptor);
+```
+
+#### Get a list of groups that a user is a member of
+
+Get a list of all the groups that a user is a member of.
+
+```java
+var userDescriptor = graph.getUsers().getUsers()
+    .stream()
+    .filter(x -> x.getDisplayName().equals("test@xmail.com"))
+    .findFirst()
+    .get()
+    .getDescriptor();
+graph.getMemberOfGroups(userDescriptor);
+```
+
+#### Create a new group
+
+Create a new group with the group display name and description.
+
+```java
+graph.createGroup("ReadersPlus", "A group containing both readers and additional privileges");
 ```
