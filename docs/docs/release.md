@@ -1,7 +1,7 @@
 # Release
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/devops/release/?view=azure-devops-rest-6.1)
-- API Version: 6.1
+- API Version: 7.1
 
 ## Prerequisites
 
@@ -60,11 +60,21 @@ release.getReleases();
 
 #### Create a release definition
 
-To create a release definition you need the json string from existing release definition. This is the easiest way to create a release definition. Download the json using `Export` option from the `Releases` section of any pipeline and modify it. Then you can use it as a reference to create a definition.
-Alternatively you get the `Release` object from the existing pipeline and convert it to string and then create a pipeline based on that. 
+To create a release definition you need the json string from existing release definition. Download the json using `Export` option from the `Releases` section of any pipeline and modify it. Then you can use it as a reference to create a definition.
+
+Alternatively you get the `ReleaseDefinition` object from the existing pipeline and convert it to string and then create a pipeline based on that.
 
 ```java
 release.createReleaseDefinition(releaseDefinitionParameters);
+
+// Easy way to create/clone a release pipeline
+var def = r.getReleaseDefinition(2);
+def.setName("Demo-CD-Copy");
+
+var mapper = new JsonMapper();
+
+var newDef = mapper.convertToString(def);
+r.createReleaseDefinition(newDef);
 ```
 
 #### Delete a release definition
@@ -81,4 +91,57 @@ Get a list of release definitions.
 
 ```java
 release.getReleaseDefinitions();
+```
+
+#### Update a release definition
+
+Update a release pipeline or definition. This comes handy in updating the variables, settings of a pipeline etc.
+
+```java
+var releaseDef = r.getReleaseDefinition(2);
+
+// Set the releases to keep in environment retention policy.
+releaseDef.getEnvironments().stream().findFirst().get().getRetentionPolicy().setReleasesToKeep(4);
+
+// Set the new value to the variables.
+var config = new ConfigurationVariableValue();
+config.setValue("NewCustomValue");
+
+var variables = new HashMap<String, ConfigurationVariableValue>(){{
+    put("Name", config);
+}};
+
+releaseDef.setVariables(variables);
+
+release.updateReleaseDefinition(releaseDef);
+```
+
+#### Update a release
+
+Update a release with the release object.
+
+```java
+// Get the existing release from release id.
+var releaseObj = r.getRelease(1225);
+releaseObj.getVariables().get("Name").setIsSecret(true);
+
+release.updateRelease(1225, releaseObj);
+```
+
+#### Queue a release
+
+Queue or start a release pipeline deployment.
+
+```java
+// Pass the release id and release environment or stage name
+release.queueRelease(354, "Dev");
+```
+
+#### Approve a release
+
+Approve a release before deploying.
+
+```java
+// Pass the approval id
+r.updateApproval(2, ReleaseApprovalStatus.APPROVED, "Good to go");
 ```

@@ -21,6 +21,7 @@ nav:
     - 'Pipelines': 'docs/pipelines.md'
     - 'Policy': 'docs/policy.md'
     - 'Release': 'docs/release.md'
+    - 'Security': 'docs/security.md'
     - 'Service Endpoint': 'docs/service-endpoint.md'
     - 'Service Hooks': 'docs/service-hooks.md'
     - 'Universal Package': 'docs/upack.md'

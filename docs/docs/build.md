@@ -1,7 +1,7 @@
 # Build
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/devops/build/builds?view=azure-devops-rest-6.1)
-- API Version: 6.1-preview
+- API Version: 7.1-preview
 
 ## Prerequisites
 
@@ -157,6 +157,58 @@ Restore a deleted build definition/pipeline
 build.restoreBuildDefinition(24, false)
 ```
 
+#### Update build definition
+
+Update a build pipeline or definition. The below example shows how to update a build definition's description.
+
+```java
+// Get the exiting definition by definition id
+var def = build.getBuildDefinition(23);
+def.setDescription("Build pipeline for the my project");
+
+build.updateBuildDefinition(def)
+```
+
+#### Create a folder
+
+Create folder to organize your build pipelines.
+
+```java
+var folder = new Folder();
+folder.setDescription("New demo folder");
+folder.setPath("\\Demo-Folder\\sub-demo"); // create a sub folder
+
+// create a folder by passing the folder path and folder object.
+build.createFolder(folder.getPath(), folder);
+```
+
+#### Delete a folder
+
+Delete a folder with the folder path.
+
+```java
+build.deleteFolder("\\Demo-Folder\\sub-demo");
+```
+
+#### Get all the folders
+
+Get a list of folder available.
+
+```java
+build.getFolders();
+```
+
+#### Update a folder
+
+Update a folder.
+
+```java
+var folder = build.getFolders().getFolders().get(1);
+folder.setDescription("Demo folder for azd project");
+
+build.updateFolder(folder.getPath(), folder);
+```
+
 #### Add build tag
 
 Add tag to a build by passing build Id and tag name. This helps you to filter out the builds based on tags.
@@ -297,6 +349,62 @@ Get a list of web hooks associated to a source provider repository.
 
 ```java
 build.getWebHooks("Github", "a7054ra9-0a34-46ac-bfdf-b8a1da865tdfd6", "userName/repositoryName");
+```
+
+#### Create a build artifact
+
+Create a new build artifact or attach the existing artifact to other build.
+
+```java
+// Get the build artifact from a build
+var artifact = build.getArtifact(1629, "Test");
+
+// create the artifact in other build
+build.createArtifact(176, artifact);
+```
+
+#### Download the build artifact
+
+Download the build artifact as zip.
+
+```java
+var res = build.getArtifactAsZip(1593, "drop");
+StreamHelper.download("drop.zip", res);
+```
+
+#### Update a build
+
+Update a build and optionally retry the failed build.
+
+```java
+var buildObj = build.getBuild(buildId);
+buildObj.setTags(new String[]{"Demo"});
+
+// This updates the build tags
+build.updateBuild(build, buildObj.getId(), false);
+```
+
+!!! note
+
+    Set retry to true only when previous attempt of a build has failed and if retry is true build object
+    should be set to null.
+
+```java
+build.updateBuild(null, buildObj.getId(), true);
+```
+
+#### Update multiple builds
+
+Update multiple builds. This will be useful if you want to update a similar settings for many builds.
+
+```java
+var builds = build.getBuilds(2);
+
+for (var b : builds.getBuildResults()) {
+    b.setPriority(QueuePriority.LOW);
+}
+
+build.updateBuilds(builds);
 ```
 
 !!! note

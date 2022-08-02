@@ -1,7 +1,7 @@
 # Wiki
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/devops/wiki/wikis?view=azure-devops-rest-6.1)
-- API Version: 6.1
+- API Version: 7.1
 
 ## Prerequisites
 

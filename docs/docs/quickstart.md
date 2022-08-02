@@ -9,7 +9,7 @@ You can grab one by following the [documentation](https://docs.microsoft.com/en-
 
 Before using any methods in the library you should connect to **Azure DevOps services** Api. You can achieve this by creating a connection object. **Azure DevOps services** require *Organization name*, *Project name* and *Personal access token* to successfully authenticate to the REST API. You should create a connection object with all these parameters.
 
-For instance refer this URL that allows you to list the available builds from pipelines, `https://dev.azure.com/{organization}/{project}/_apis/build/builds?api-version=6.1-preview.7`. You can get the *organization name* and *project name* from your **Azure DevOps services** URL similar to this.
+For instance refer this URL that allows you to list the available builds from pipelines, `https://dev.azure.com/{organization}/{project}/_apis/build/builds?api-version=7.1-preview.7`. You can get the *organization name* and *project name* from your **Azure DevOps services** URL similar to this.
 
 Assuming that you have *Organization name*, *Project name* and *Personal access token* ready to access the REST API.
 

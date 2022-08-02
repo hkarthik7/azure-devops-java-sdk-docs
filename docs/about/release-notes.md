@@ -2,6 +2,48 @@
 
 One way of getting to know what's new in **azd** is to review the release notes. It is easy to update the version of the library that you're using by just changing the version in your *pom.xml* or any other project relevant files.
 
+## 5.0.0
+
+**Breaking changes**
+
+**Changes to Build and BuildDefinition types**
+
+- Enable feature management for project services (i.e. Test Plans, Boards, etc).
+- Merged PR: [implement featureManagement to enable / disable project services #33 #34](https://github.com/hkarthik7/azure-devops-java-sdk/pull/34)
+- Expanded support for **BuildApi**.
+  - Bug fix for `cloneBuildDefinition` method
+  - Added `updateBuild` and `updateBuilds`
+  - Manage `Folder` Api
+- Expanded support for **WorkItemTrackingApi**.
+  - Added methods `createAttachment`, `getAttachmentAsZip` and `getAttachmentContent` for better management of
+  Workitem attachments Api.
+  - `createAttachment` and `getAttachment` methods are deprecated. New methods returns an `InputStream` and 
+    `StreamHelper` can be used to download or convert it to string etc.  
+- Updated `downloadPackage` in **MavenApi**.
+- **StreamHelper** class to download contents from Api response.
+- Type change for `updateReleaseDefinition` in **ReleaseApi** for ease of use.
+- Added support for `Queries` Api in `Work item tracking`.
+  
+- `BaseClient` and `Client` classes are deprecated. Instead, introduced `BaseRestClient` and `RestClient` classes for
+ease of use in other concrete Api implementations.
+
+## 4.0.0
+
+**Breaking changes**
+- Added GraphEntity as parent of GraphUser and GraphGroup
+- Minor risk if extending from GraphUser or GraphGroup
+- Merged PR: [Refactor GraphEntity as parent of GraphUser and GraphGroup #32](https://github.com/hkarthik7/azure-devops-java-sdk/pull/32)
+- Implement **Security API** and **Identity API** functionality
+  - query security namespaces
+  - query access control lists
+  - set / remove access control lists
+  - set / remove access control entries
+  - read identity descriptors (convert from user / group descriptors)
+- Merged PR: [Added support for Git tag #31](https://github.com/hkarthik7/azure-devops-java-sdk/pull/31)
+- Merged PR: [Implement **Security API** and **Identity API** functionality #30](https://github.com/hkarthik7/azure-devops-java-sdk/pull/30)
+- Expanded the GitApi to get the branches of a repository, or a specific branch from a repository based on the branch name.
+- Merged PR: [Getting repository branches support #35](https://github.com/hkarthik7/azure-devops-java-sdk/pull/35)
+
 ## 3.0.4
 
 - Updated Api version from 6.x to 7.x.

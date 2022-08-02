@@ -1,7 +1,7 @@
 # WorkItem Tracking
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/devops/wit/?view=azure-devops-rest-6.1)
-- API Version: 6.1
+- API Version: 7.1
 
 ## Prerequisites
 
@@ -186,12 +186,29 @@ wit.getWorkItemType("bug");
 To add an attachment to a work item you should create an attachment first. This requires you to pass file name, attachment upload type, project team name, attachment contents and work item id.
 
 ```java
-// Create an attachment
-var attachment = wit.createAttachment("testFile.txt", AttachmentUploadType.SIMPLE, "my-team", "Sample content");
-var attachmentFields = new HashMap<String, String>(){{ put(attachment.getUrl(), "Test File url."); }};
+// 1) Add a text file to the work item.
+var contentStream = StreamHelper.convertToStream("This is sample content");
 
-// add the attachment to work item.
-wit.addWorkItemAttachment(133, attachmentFields);
+var attachment = wit.createAttachment("testFile.txt", AttachmentUploadType.SIMPLE,
+        "my-project-team", contentStream);
+
+var attachmentFields = new HashMap<String, String>() {{
+    put(attachment.getUrl(), "Test File url.");
+}};
+
+wit.addWorkItemAttachment(994, attachmentFields);
+
+// 2) Add a jpeg file to the work item
+var contentStream = StreamHelper.convertToStream(new File("requirement-diagram.jpeg"));
+
+var attachment = wit.createAttachment("requirement-diagram.jpeg", AttachmentUploadType.SIMPLE,
+        "my-project-team", contentStream);
+
+var attachmentFields = new HashMap<String, String>() {{
+    put(attachment.getUrl(), "Infrastructure architecture diagram.");
+}};
+
+wit.addWorkItemAttachment(1784, attachmentFields);
 ```
 
 #### Remove an attachment from a work item
@@ -210,4 +227,121 @@ for (var relation: relations) {
         wit.removeWorkItemAttachment(133, attachmentUrl);
     }
 }
+```
+
+#### Get the work item activities
+
+List all the work item activities.
+
+```java
+wit.getMyWorkRecentActivity();
+```
+
+#### Get the work item fields
+
+Get the work item fields.
+
+```java
+wit.getWorkItemFields();
+```
+
+#### Create a work item field
+
+Create a work item field.
+
+```java
+var workitemField = new WorkItemField();
+workitemField.setName("New Work Item Field");
+workitemField.setReferenceName("SupportedOperations.GreaterThanEquals");
+workitemField.setDescription(null);
+workitemField.setType(FieldType.STRING);
+workitemField.setUsage(FieldUsage.WORKITEM);
+workitemField.setReadOnly(false);
+workitemField.setCanSortBy(true);
+workitemField.setIsQueryable(true);
+workitemField.setSupportedOperations(List.of(new WorkItemFieldOperation(){{
+    setReferenceName("SupportedOperations.Equals");
+    setReferenceName("=");
+}}));
+workitemField.setIsIdentity(true);
+workitemField.setIsPicklist(false);
+workitemField.setIsPicklistSuggested(false);
+workitemField.setUrl(null);
+
+wit.createWorkItemField(workitemField);
+```
+
+#### Delete the work item field
+
+Delete the work item field.
+
+```java
+wit.deleteWorkItemField("New Work Item Field");
+```
+
+#### Update the work item field
+
+Update the work item field.
+
+```java
+wit.updateWorkItemField("New Work Item Field", false);
+```
+
+#### Create a query folder
+
+Create a query folder.
+
+```java
+var q = new QueryHierarchyItem();
+var query = wit.getQueries().getQueryHierarchyItems().get(1).getId();
+
+q.setName("Website team");
+q.setIsFolder(true);
+wit.createQuery(query, q);
+```
+
+#### Create a query in the previously created folder
+
+Create a query in the previously created folder.
+
+```java
+var q = new QueryHierarchyItem();
+q.setName("All Bugs");
+q.setWiql("Select [System.Id], [System.Title], [System.State] From WorkItems Where [System.WorkItemType] " +
+        "= 'Bug' order by [Microsoft.VSTS.Common.Priority] asc, [System.CreatedDate] desc");
+
+wit.createQuery("My Queries/Website team", q);
+```
+
+#### Get all queries
+
+Get all queries.
+
+```java
+wit.getQueries().getQueryHierarchyItems();
+```
+
+#### Delete a query folder
+
+Delete a query folder.
+
+```java
+wit.deleteQuery("My Queries/Website team");
+```
+
+#### Get queries in batch
+
+Get queries in batch.
+
+```java
+var id = wit.getQueries().getQueryHierarchyItems().stream().findFirst().get().getId();
+wit.getQueryBatches(QueryErrorPolicy.OMIT, QueryExpand.ALL, new String[]{id});
+```
+
+#### Search queries
+
+Search queries.
+
+```java
+wit.searchQuery("Bugs");
 ```
