@@ -152,17 +152,10 @@ var projectReference = new ProjectReference();
 var core = webApi.CoreApi();
 var project = core.getProject("myProject");
 
-var variables = new HashMap<String, Object>(){{
-    put("userName", new HashMap<String, String>(){{
-        put("value", "testUser");
-    }});
-    put("code", new HashMap<String, Integer>(){{
-        put("value", 2255);
-    }});
-    put("password", new HashMap<String, Object>(){{
-        put("value", "Test Value");
-        put("isSecret", true);
-    }});
+var variables = new VariableGroupMap(){{
+    put("userName", "testUser");
+    put("passCode", "2255");
+    put("details", "Test Value", VariableValue.IS_SECRET);
 }};
 
 projectReference.setName(project.getName());
@@ -170,7 +163,7 @@ projectReference.setId(project.getId());
 
 definition.setName("myVariable");
 definition.setDescription("Development variable group");
-definition.setVariables(variables);
+definition.setVariables(variables.get());
 definition.setProjectReference(projectReference);
 definition.setType(VariableGroupType.Vsts);
 
