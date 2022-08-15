@@ -2,6 +2,15 @@
 
 One way of getting to know what's new in **azd** is to review the release notes. It is easy to update the version of the library that you're using by just changing the version in your *pom.xml* or any other project relevant files.
 
+## 5.0.1
+
+- Expanded support for **ReleaseApi**.
+- Bug fix for **updateReleaseEnvironment** in **ReleaseApi**.
+- Added **ResourceId** class that contains the resource ids of all services.
+- Bug fix for issue [MIssing visibility enum value #38](https://github.com/hkarthik7/azure-devops-java-sdk/issues/38).
+- Extended support for **WikiApi**
+
+
 ## 5.0.0
 
 **Breaking changes**
