@@ -33,7 +33,7 @@ This returns a list of build object which you can iterate through and get the bu
 `createBuildDefinition` method accepts the build definition parameters as a string. So, you have to create a json string with all the parameters your need and call this method. There are two ways you can achieve this
 
 1. Get the build definition parameters from the existing pipeline, store it in a file, edit it and use it in your code.
-2. The second way is to get the build definition object from existing pipeline using `getBuildDefinition` method and use `convertToString` method from `JsonMapper`.
+2. The second way is to get the build definition object from existing pipeline using `getBuildDefinition` method and call `toString` method on it.
 
 You can choose either of the ways that suits your requirement or scenario.
 
@@ -46,11 +46,9 @@ build.createBuildDefinition(definition);
 ```java
 var buildDefinition = build.getBuildDefinition(22);
 buildDefinition.setName("Deploy-WebApp-CI-Copy");
-var mapper = new JsonMapper();
-var definitionString = mapper.convertToString(buildDefinition);
 
 // now we're ready to create the definition
-build.createBuildDefinition(definitionString);
+build.createBuildDefinition(buildDefinition.toString());
 ```
 
 !!! note
