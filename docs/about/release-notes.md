@@ -2,6 +2,15 @@
 
 One way of getting to know what's new in **azd** is to review the release notes. It is easy to update the version of the library that you're using by just changing the version in your *pom.xml* or any other project relevant files.
 
+## 5.0.2
+
+- Changes in **WikiApi**
+  - Bug fix for **getPageStats()** method.
+  - Change the type parameters for **createWiki()** method. Now **createWiki()** allows creating project and code wiki.
+  - Support for managing project wiki in all methods.
+- Update for **GitApi**
+  - Added support for Git Blobs and Git Items Api.  
+
 ## 5.0.1
 
 - Expanded support for **ReleaseApi**.
