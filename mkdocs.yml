@@ -9,6 +9,7 @@ nav:
     - 'Quick Start': 'docs/quickstart.md'
     - 'Accounts': 'docs/accounts.md'
     - 'Build': 'docs/build.md'
+    - 'Call Azure DevOps REST API': 'docs/tutorial.md'
     - 'Core': 'docs/core.md'
     - 'Distributed Task': 'docs/distributed-task.md'
     - 'Extension Management': 'docs/extension-management.md'
