@@ -55,6 +55,6 @@ OAuthApi.hasTokenExpired(AuthorizedToken); // Authorized token object
 
 !!! Tip
 
-    You can create a connection object using **[AzDClienApi](https://hkarthik7.github.io/azd-docs/org/azd/utils/AzDClientApi.html)** Api and set the defaults along with *Authorization* object, app secret,
+    You can create a connection object using **[Connection](https://hkarthik7.github.io/azd-docs/org/azd/connection/Connection.html)** Api and set the defaults along with *Authorization* object, app secret,
     call back url. Then call **getPersonalAccessToken** method from it which returns the **OAuth** token and refreshes the token if
     it has expired and returns the new token.
